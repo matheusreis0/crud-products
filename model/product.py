@@ -7,8 +7,8 @@ class Product:
 
     def serialize(self):
         return {
-            'id': self.__id,
+            'id': int(self.__id),
             'name': self.__name,
-            'price': self.__price
+            'price': float(self.__price)
         }
 

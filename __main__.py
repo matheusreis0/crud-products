@@ -11,6 +11,19 @@ def menu(menu, options):
         print(f"{index} - {value}")
     print("10 - Sair")
 
+def menu_read():
+    menu_read = True
+    while menu_read:
+
+        try:
+            id = int(input("Digite o id do produto: "))
+        except ValueError:
+            print("Opcao Invalida!")
+            continue
+
+        product_controller.read_product(id)
+        menu_read = False
+
 option = 0
 
 while option != 10:
@@ -30,11 +43,11 @@ while option != 10:
 
         if option == 0:
             product = product_controller.create_product()
-
         elif option == 1:
             product_controller.update_product()
         elif option == 2:
-            product_controller.read_product()
-
+            # product_controller.read_product()
+            menu_read()
         elif option == 3:
             product_controller.delete_product()
+

@@ -22,11 +22,12 @@ class ProductController:
         print("--- Menu Atualizar ----")
         pass
 
-    def read_product(self):
+    def read_product(self, product_id):
         print("--- Menu Listar ----")
         data = self.__product_db.get()
         for item in data:
-            print(f"Produto #{item['id']}\nNome: {item['name']}\nPreco: {item['price']}")
+            if item['id'] == product_id:
+                print(f"Produto #{item['id']}\nNome: {item['name']}\nPreco: {item['price']}")
 
     def delete_product(self):
         print("--- Menu Deletar ----")
