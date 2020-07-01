@@ -28,8 +28,8 @@ class ProductController:
         return product
 
     def read_product(self, product_id):
-        data = self.__product_db.get_all()
-        for item in data["products"]:
+        data = self.__product_db.get()
+        for item in data:
             if item['id'] == product_id:
                 return item
 

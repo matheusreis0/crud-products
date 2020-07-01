@@ -10,12 +10,6 @@ class ProductDB:
 
         return data["products"]
 
-    def get_all(self):
-        with open('products.txt') as file:
-            data = json.load(file)
-
-        return data
-
     def insert_in_file(self):
         with open('products.txt', 'w+') as file:
             json.dump(self.__data, file, indent=4)
