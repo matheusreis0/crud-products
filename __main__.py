@@ -2,14 +2,14 @@ from controller.product_controller import ProductController
 from db.product_db import ProductDB
 
 menu_options = [
-    "Cadastrar Produto", "Atualizar Produto", "Listar Produto", "Deletar Produto"
+    "Cadastrar Produto", "Atualizar Produto", "Listar Produto", "Deletar Produto",
+    "Sair"
 ]
 
 def menu(menu, options):
     print(f"---- {menu} ----")
     for index, value in enumerate(options):
         print(f"{index} - {value}")
-    print("10 - Sair")
 
 def menu_create():
     print("---- Menu Cadastro ----")
@@ -77,9 +77,9 @@ def menu_read():
         else:
             print("Produto nao encontrado!")
 
-option = 0
+option = -1
 
-while option != 10:
+while option != 4:
     menu("Menu initial", menu_options)
     try:
         option = int(input("Escolha uma opcao "))
@@ -87,7 +87,7 @@ while option != 10:
         print("Opcao Invalida!")
         continue
 
-    if option not in range(len(menu_options)) and option != 10:
+    if option not in range(len(menu_options)) and option != 4:
         print("Opcao Invalida!")
         continue
     else:
@@ -102,4 +102,5 @@ while option != 10:
             menu_read()
         elif option == 3:
             menu_delete()
-
+        elif option == 4:
+            break
