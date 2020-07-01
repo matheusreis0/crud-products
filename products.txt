@@ -2,13 +2,13 @@
     "products": [
         {
             "id": 1,
-            "name": "a",
-            "price": 2.0
+            "name": "asd",
+            "price": 12.0
         },
         {
-            "id": 2,
-            "name": "b",
-            "price": 2.0
+            "id": 1231,
+            "name": "sdas",
+            "price": 12.0
         }
     ]
 }
