@@ -27,8 +27,8 @@ while option != 10:
         if option == 0:
             product_controller.create_product()
         elif option == 1:
-            print("menu atualizar")
+            product_controller.update_product()
         elif option == 2:
-            print("menu listar")
+            product_controller.read_product()
         elif option == 3:
-            print("menu deletar")
+            product_controller.delete_product()

@@ -14,12 +14,15 @@ class ProductController:
 
         product = Product(id, name, price)
         return product
-    
+
     def update_product(self):
+        print("--- Menu Atualizar ----")
         pass
 
     def read_product(self):
+        print("--- Menu Listar ----")
         pass
 
     def delete_product(self):
+        print("--- Menu Deletar ----")
         pass
