@@ -22,7 +22,7 @@ class ProductDB:
 
     def insert(self, product):
         self.__data = self.get_all()
-        self.__data["products"].append(product.serialize())
+        self.__data["products"].append(product)
 
         self.insert_in_file()
 

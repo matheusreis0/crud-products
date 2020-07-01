@@ -8,6 +8,7 @@ class ProductController:
 
     def create_product(self, id, name, price):
         product = Product(id, name, price)
+        product = product.serialize()
         self.__product_db.insert(product)
 
         return product

@@ -14,6 +14,11 @@
             "id": 4,
             "name": "Produto dd",
             "price": 444.0
+        },
+        {
+            "id": 123,
+            "name": "Produto teste",
+            "price": 1000.0
         }
     ]
 }
