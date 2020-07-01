@@ -30,10 +30,11 @@ while option != 10:
 
         if option == 0:
             product = product_controller.create_product()
-            product_db.insert(product)
+
         elif option == 1:
             product_controller.update_product()
         elif option == 2:
             product_controller.read_product()
+
         elif option == 3:
             product_controller.delete_product()

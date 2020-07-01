@@ -14,6 +14,7 @@ class ProductController:
         price = input("Digite o preco: ")
 
         product = Product(id, name, price)
+        self.__product_db.insert(product)
 
         return product
 
@@ -23,7 +24,9 @@ class ProductController:
 
     def read_product(self):
         print("--- Menu Listar ----")
-        pass
+        data = self.__product_db.get()
+        for item in data:
+            print(f"Produto #{item['id']}\nNome: {item['name']}\nPreco: {item['price']}")
 
     def delete_product(self):
         print("--- Menu Deletar ----")

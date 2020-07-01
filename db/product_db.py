@@ -6,9 +6,7 @@ class ProductDB:
 
     def insert(self, product):
         with open('products.txt', 'w') as file:
-            for item in products:
-                self.__data["products"].append(item.serialize())
-            print(self.__data)
+            self.__data["products"].append(product.serialize())
             json.dump(self.__data, file, indent=4)
 
     def insert_list(self, products):
@@ -20,6 +18,6 @@ class ProductDB:
 
     def get(self):
         with open('products.txt') as file:
-            self.__data = json.load(file)
-            print(self.__data)
+            data = json.load(file)
 
+        return data["products"]
