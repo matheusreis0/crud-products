@@ -12,9 +12,19 @@ class ProductController:
 
         return product
 
-    def update_product(self):
-        print("--- Menu Atualizar ----")
-        pass
+    def update_product(self, product_id, name, price):
+        data = self.__product_db.get()
+        list_index = 0
+
+        for index, item in enumerate(data):
+            if item['id'] == product_id:
+                list_index = index
+
+        product = Product(product_id, name, price)
+        product = product.serialize()
+
+        self.__product_db.update(list_index, product)
+        return product
 
     def read_product(self, product_id):
         data = self.__product_db.get_all()

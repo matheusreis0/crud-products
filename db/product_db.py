@@ -16,10 +16,19 @@ class ProductDB:
 
         return data
 
+    def insert_in_file(self):
+        with open('products.txt', 'w+') as file:
+            json.dump(self.__data, file, indent=4)
+
     def insert(self, product):
         self.__data = self.get_all()
         self.__data["products"].append(product.serialize())
 
-        with open('products.txt', 'w+') as file:
-            json.dump(self.__data, file, indent=4)
+        self.insert_in_file()
+
+    def update(self, list_id, product):
+        self.__data = self.get_all()
+        self.__data["products"][list_id] = product
+        
+        self.insert_in_file()
 

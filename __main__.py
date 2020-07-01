@@ -20,6 +20,27 @@ def menu_create():
 
     product = product_controller.create_product(id, name, price)
 
+def menu_update():
+    print("--- Menu Atualizar ----")
+    id = -1
+
+    while id < 0:
+        try:
+            id = int(input("Digite o id do produto: "))
+        except ValueError:
+            print("Opcao Invalida!")
+            continue
+        
+        product = product_controller.read_product(id)
+        if product:
+            print(f"Produto #{product['id']}\nNome: {product['name']}\nPreco: {product['price']}")
+            name = input("Digite o nome: ")
+            price = input("Digite o preco: ")
+            product = product_controller.update_product(id, name, price)
+            print(f"Produto #{product['id']} atualizado")
+        else:
+            print("Produto nao encontrado!")
+
 def menu_read():
     print("--- Menu Listar ----")
     id = -1
@@ -57,7 +78,7 @@ while option != 10:
         if option == 0:
             menu_create()
         elif option == 1:
-            product_controller.update_product()
+            menu_update()
         elif option == 2:
             menu_read()
         elif option == 3:

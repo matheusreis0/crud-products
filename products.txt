@@ -2,8 +2,8 @@
     "products": [
         {
             "id": 1,
-            "name": "asd",
-            "price": 12.0
+            "name": "Produto A",
+            "price": 10.0
         },
         {
             "id": 1231,
@@ -14,6 +14,11 @@
             "id": 2,
             "name": "bbb",
             "price": 23.0
+        },
+        {
+            "id": 4,
+            "name": "Produto dd",
+            "price": 444.0
         }
     ]
 }
