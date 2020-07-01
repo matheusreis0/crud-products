@@ -23,10 +23,3 @@ class ProductDB:
         with open('products.txt', 'w+') as file:
             json.dump(self.__data, file, indent=4)
 
-    def insert_list(self, products):
-        with open('products.txt', 'w') as file:
-            for item in products:
-                self.__data["products"].append(item.serialize())
-            print(self.__data)
-            json.dump(self.__data, file, indent=4)
-
