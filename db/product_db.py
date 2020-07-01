@@ -29,7 +29,7 @@ class ProductDB:
     def update(self, list_id, product):
         self.__data = self.get_all()
         self.__data["products"][list_id] = product
-        
+
         self.insert_in_file()
     
     def delete(self, list_id):

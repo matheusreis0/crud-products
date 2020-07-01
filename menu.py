@@ -3,8 +3,8 @@ from controller.product_controller import ProductController
 class Menu:
     def __init__(self):
         self.__menu_options = [
-            "Cadastrar Produto", "Atualizar Produto", "Listar Produto", "Deletar Produto",
-            "Sair"
+            "Cadastrar Produto", "Atualizar Produto", "Listar Produto",
+            "Deletar Produto", "Sair"
         ]
         self.__product_controller = ProductController()
 
@@ -35,10 +35,14 @@ class Menu:
             
             product = self.__product_controller.read_product(id)
             if product:
-                print(f"Produto #{product['id']}\nNome: {product['name']}\nPreco: {product['price']}")
+                print(f"Produto #{product['id']}\nNome: {product['name']}\n"
+                    f"Preco: {product['price']}")
+
                 name = input("Digite o nome: ")
                 price = input("Digite o preco: ")
-                product = self.__product_controller.update_product(id, name, price)
+                product = self.__product_controller.update_product(id, name, 
+                    price)
+
                 print(f"Produto #{product['id']} atualizado")
             else:
                 print("Produto nao encontrado!")
@@ -56,7 +60,8 @@ class Menu:
             
             product = self.__product_controller.read_product(id)
             if product:
-                print(f"Produto #{product['id']}\nNome: {product['name']}\nPreco: {product['price']}")
+                print(f"Produto #{product['id']}\nNome: {product['name']}\n"
+                    f"Preco: {product['price']}")
                 product = self.__product_controller.delete_product(id)
                 print(f"Produto #{id} deletado")
             else:
@@ -75,7 +80,8 @@ class Menu:
 
             product = self.__product_controller.read_product(id)
             if product:
-                print(f"Produto #{product['id']}\nNome: {product['name']}\nPreco: {product['price']}")
+                print(f"Produto #{product['id']}\nNome: {product['name']}\n"
+                    f"Preco: {product['price']}")
             else:
                 print("Produto nao encontrado!")
 
