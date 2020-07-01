@@ -1,9 +1,10 @@
 from model.product import Product
+from db.product_db import ProductDB
 
 class ProductController:
 
     def __init__(self):
-        super().__init__()
+        self.__product_db = ProductDB()
 
     def create_product(self):
         print("---- Menu Cadastro ----")
@@ -13,6 +14,7 @@ class ProductController:
         price = input("Digite o preco: ")
 
         product = Product(id, name, price)
+
         return product
 
     def update_product(self):
@@ -26,3 +28,4 @@ class ProductController:
     def delete_product(self):
         print("--- Menu Deletar ----")
         pass
+
