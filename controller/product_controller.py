@@ -32,7 +32,14 @@ class ProductController:
             if item['id'] == product_id:
                 return item
 
-    def delete_product(self):
-        print("--- Menu Deletar ----")
-        pass
+    def delete_product(self, product_id):
+        data = self.__product_db.get()
+        list_index = 0
+
+        for index, item in enumerate(data):
+            if item['id'] == product_id:
+                list_index = index
+
+        self.__product_db.delete(list_index)
+        return product_id
 

@@ -41,6 +41,25 @@ def menu_update():
         else:
             print("Produto nao encontrado!")
 
+def menu_delete():
+    print("--- Menu Deletar ----")
+    id = -1
+
+    while id < 0:
+        try:
+            id = int(input("Digite o id do produto: "))
+        except ValueError:
+            print("Opcao Invalida!")
+            continue
+        
+        product = product_controller.read_product(id)
+        if product:
+            print(f"Produto #{product['id']}\nNome: {product['name']}\nPreco: {product['price']}")
+            product = product_controller.delete_product(id)
+            print(f"Produto #{id} deletado")
+        else:
+            print("Produto nao encontrado!")
+
 def menu_read():
     print("--- Menu Listar ----")
     id = -1
@@ -82,5 +101,5 @@ while option != 10:
         elif option == 2:
             menu_read()
         elif option == 3:
-            product_controller.delete_product()
+            menu_delete()
 
