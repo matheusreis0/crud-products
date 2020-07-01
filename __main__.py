@@ -1,3 +1,5 @@
+from controller.product_controller import ProductController
+
 menu_options = [
     "Cadastrar Produto", "Atualizar Produto", "Listar Produto", "Deletar Produto"
 ]
@@ -21,8 +23,9 @@ while option != 10:
         print("Opcao Invalida!")
         continue
     else:
+        product_controller = ProductController()
         if option == 0:
-            print("menu cadastro")
+            product_controller.create_product()
         elif option == 1:
             print("menu atualizar")
         elif option == 2:
