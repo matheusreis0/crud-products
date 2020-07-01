@@ -9,6 +9,11 @@
             "id": 1231,
             "name": "sdas",
             "price": 12.0
+        },
+        {
+            "id": 2,
+            "name": "bbb",
+            "price": 23.0
         }
     ]
 }
